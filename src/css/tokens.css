@@ -1,0 +1,107 @@
+/* ==========================================================================
+   Design Tokens — Dhouha Ben Rhouma Portfolio
+   Palette from brief. Dark mode is the default :root; light is the override.
+   ========================================================================== */
+
+/* --- Dark mode (system default) ----------------------------------------- */
+:root {
+  /* Core colors */
+  --blue:       #7FAEC9;
+  --lavender:   #C9AFDA;
+  --gold:       #D9A968;
+  --mint:       #8FD1AA;
+  --rose:       #F0A8B8;
+  --navy:       #141A2C;
+  --offwhite:   #F4F1EC;
+
+  /* Semantic surface */
+  --bg:         #0D1113;
+  --panel:      #10161A;
+
+  /* Text */
+  --text:       #E8ECEE;
+  --text-muted: #7E9298;
+
+  /* Role-mapped accents */
+  --accent:          var(--blue);
+  --accent-on:       #0B1416;
+  --accent-wash:     rgba(127,174,201,.14);
+  --accent-strong:   #A9CBDD;
+
+  --lav-on:          #1A1220;
+  --lav-wash:        rgba(201,175,218,.16);
+  --lav-strong:      #D8C2E8;
+
+  --gold-wash:       rgba(217,169,104,.14);
+  --mint-wash:       rgba(143,209,170,.14);
+  --rose-wash:       rgba(240,168,184,.14);
+
+  /* Surface & borders */
+  --surface:         rgba(255,255,255,.045);
+  --surface-hover:   rgba(255,255,255,.07);
+  --border:          rgba(255,255,255,.09);
+  --border-hover:    rgba(255,255,255,.18);
+
+  /* Navy fills */
+  --navy-deep:       #0C0F1C;
+  --navy-wash:       rgba(20,26,44,.14);
+
+  /* Hero headline gradient */
+  --headline-grad:   linear-gradient(100deg, var(--gold) 0%, var(--offwhite) 70%);
+
+  /* Misc */
+  --radius-card: 20px;
+  --radius-pill: 100px;
+  --shadow-card: 0 4px 32px rgba(0,0,0,.35);
+  --shadow-hover: 0 8px 48px rgba(0,0,0,.45);
+  --grain-opacity: .05;
+
+  /* Fonts */
+  --font-display: 'Bricolage Grotesque', serif;
+  --font-body:    'Inter', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+}
+
+/* --- Light mode ---------------------------------------------------------- */
+[data-theme="light"] {
+  --blue:       #3F6E8A;
+  --lavender:   #8E6BA4;
+  --gold:       #A67C34;
+  --mint:       #2F7A4E;
+  --rose:       #B85770;
+  --navy:       #1B2440;
+  --offwhite:   #FAF8F4;
+
+  --bg:         #F5F6F4;
+  --panel:      #ECEEEB;
+
+  --text:       #12181B;
+  --text-muted: #5C6A6F;
+
+  --accent:          var(--blue);
+  --accent-on:       #FFFFFF;
+  --accent-wash:     rgba(63,110,138,.10);
+  --accent-strong:   #2C536A;
+
+  --lav-on:          #FFFFFF;
+  --lav-wash:        rgba(142,107,164,.10);
+  --lav-strong:      #6F3E86;
+
+  --gold-wash:       rgba(166,124,52,.10);
+  --mint-wash:       rgba(47,122,78,.10);
+  --rose-wash:       rgba(184,87,112,.10);
+
+  --surface:         rgba(13,17,19,.035);
+  --surface-hover:   rgba(13,17,19,.06);
+  --border:          rgba(13,17,19,.10);
+  --border-hover:    rgba(13,17,19,.22);
+
+  --navy-deep:       #10152A;
+  --navy-wash:       rgba(27,36,64,.08);
+
+  --headline-grad:   linear-gradient(100deg, var(--navy) 0%, var(--gold) 80%);
+
+  --shadow-card: 0 2px 20px rgba(0,0,0,.08);
+  --shadow-hover: 0 6px 36px rgba(0,0,0,.14);
+  --grain-opacity: .03;
+}

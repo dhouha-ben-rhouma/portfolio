@@ -1,0 +1,24 @@
+/* ── Google Fonts (must precede all other imports) ── */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── Design Tokens & Base CSS ── */
+@import "./css/tokens.css";
+@import "./css/base.css";
+@import "./css/hero.css";
+@import "./css/components.css";
+
+/* ── Tailwind CSS ── */
+@import "tailwindcss";
+
+/* ── Global Layout & Horizontal Scroll Lock ── */
+html, body, #root {
+  max-width: 100vw;
+  overflow-x: clip;
+}
+
+/* Ensure font variables work everywhere with Tailwind */
+@theme {
+  --font-display: 'Bricolage Grotesque', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
