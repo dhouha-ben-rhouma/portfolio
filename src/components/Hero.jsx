@@ -56,7 +56,16 @@ export default function Hero() {
         {/* Right: Visual */}
         <div className="hero-visual" aria-hidden="true">
           <div className="hero-portrait img-placeholder" data-reveal>
-            <span>Portrait photo</span>
+            <img
+              src="/assets/images/portrait.jpg"
+              alt="Dhouha Ben Rhouma"
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+                e.currentTarget.nextElementSibling.style.display = 'block';
+              }}
+            />
+            <span style={{ display: 'none' }}>Portrait photo</span>
           </div>
           <div className="hero-card-float glass" data-reveal data-reveal-delay="2">
             <span className="card-label">Looking for</span>

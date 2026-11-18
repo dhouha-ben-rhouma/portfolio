@@ -8,6 +8,7 @@ import Marquee from './components/Marquee';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Hackathons from './components/Hackathons';
+import Certificates from './components/Certificates';
 import Skills from './components/Skills';
 import HowIWork from './components/HowIWork';
 import Creative from './components/Creative';
@@ -28,6 +29,7 @@ export default function App() {
         <Projects />
         <Experience />
         <Hackathons />
+        <Certificates />
         <Skills />
         <HowIWork />
         <Creative />

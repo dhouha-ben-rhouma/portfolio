@@ -23,6 +23,16 @@ export default function Header({ theme, toggleTheme }) {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [mobileOpen]);
 
+  const navLinks = [
+    { href: '#projects', label: 'Projects' },
+    { href: '#experience', label: 'Experience' },
+    { href: '#certificates', label: 'Certificates' },
+    { href: '#skills', label: 'Skills' },
+    { href: '#creative', label: 'Creative' },
+    { href: '#about', label: 'About' },
+    { href: '#contact', label: 'Contact' },
+  ];
+
   return (
     <>
       <header className={`site-header glass ${scrolled ? 'scrolled' : ''}`} role="banner">
@@ -30,14 +40,13 @@ export default function Header({ theme, toggleTheme }) {
           Dhouha.dev
         </a>
 
-        <nav className="site-nav hidden md:block" aria-label="Main navigation">
+        <nav className="site-nav hidden lg:block" aria-label="Main navigation">
           <ul>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#creative">Creative</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <a href={link.href}>{link.label}</a>
+              </li>
+            ))}
           </ul>
         </nav>
 
@@ -82,12 +91,11 @@ export default function Header({ theme, toggleTheme }) {
         aria-label="Mobile navigation"
         className={`mobile-drawer ${mobileOpen ? 'open' : ''}`}
       >
-        <a href="#projects" onClick={() => setMobileOpen(false)}>Projects</a>
-        <a href="#experience" onClick={() => setMobileOpen(false)}>Experience</a>
-        <a href="#skills" onClick={() => setMobileOpen(false)}>Skills</a>
-        <a href="#creative" onClick={() => setMobileOpen(false)}>Creative</a>
-        <a href="#about" onClick={() => setMobileOpen(false)}>About</a>
-        <a href="#contact" onClick={() => setMobileOpen(false)}>Contact</a>
+        {navLinks.map((link) => (
+          <a key={link.href} href={link.href} onClick={() => setMobileOpen(false)}>
+            {link.label}
+          </a>
+        ))}
         <a href={meta.cvFile} download onClick={() => setMobileOpen(false)} className="btn btn-primary">
           Download CV
         </a>

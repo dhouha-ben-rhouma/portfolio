@@ -17,6 +17,7 @@ export default function Footer() {
           <ul>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#experience">Experience</a></li>
+            <li><a href="#certificates">Certificates</a></li>
             <li><a href="#hackathons">Hackathons</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#creative">Creative</a></li>

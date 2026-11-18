@@ -31,16 +31,50 @@ export default function Projects() {
               data-reveal
               data-reveal-delay={String(idx + 1)}
             >
-              <div className="proj-thumb img-placeholder">
-                {proj.image ? (
-                  <img src={proj.image} alt={proj.imageAlt} loading="lazy" />
-                ) : (
-                  <span>Project visual</span>
-                )}
-              </div>
+              {/* Clickable thumbnail */}
+              {proj.link ? (
+                <a
+                  href={proj.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="proj-thumb img-placeholder block"
+                  aria-label={`Open ${proj.title}`}
+                >
+                  {proj.image ? (
+                    <img src={proj.image} alt={proj.imageAlt} loading="lazy" />
+                  ) : (
+                    <span>Project visual</span>
+                  )}
+                </a>
+              ) : (
+                <div className="proj-thumb img-placeholder">
+                  {proj.image ? (
+                    <img src={proj.image} alt={proj.imageAlt} loading="lazy" />
+                  ) : (
+                    <span>Project visual</span>
+                  )}
+                </div>
+              )}
 
               <p className="proj-problem">{proj.problem}</p>
-              <h3>{proj.title}</h3>
+              
+              {/* Title (clickable if link exists) */}
+              <h3>
+                {proj.link ? (
+                  <a
+                    href={proj.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                    style={{ color: 'inherit' }}
+                  >
+                    {proj.title}
+                  </a>
+                ) : (
+                  proj.title
+                )}
+              </h3>
+
               <p>{proj.description}</p>
 
               <div className="proj-footer">
@@ -66,8 +100,13 @@ export default function Projects() {
                 )}
 
                 {proj.link && (
-                  <a href={proj.link} target="_blank" rel="noopener noreferrer" className="proj-link">
-                    View project →
+                  <a
+                    href={proj.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="proj-link"
+                  >
+                    {proj.linkLabel || 'View project →'}
                   </a>
                 )}
               </div>

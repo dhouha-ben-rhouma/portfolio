@@ -1,7 +1,7 @@
 // src/data/content.js
 // ─────────────────────────────────────────────
 // All site content in one place.
-// Replace [PLACEHOLDER] values before going live.
+// You can edit and add details manually here!
 // ─────────────────────────────────────────────
 
 export const meta = {
@@ -12,10 +12,10 @@ export const meta = {
   email: "dhouha.pro@gmail.com",
   linkedin: "https://www.linkedin.com/in/dhouha-ben-rhouma/",
   github: "https://github.com/dhouha-ben-rhouma",
-  cvFile: "assets/cv/[PLACEHOLDER-cv-filename].pdf", // e.g. dhouha-cv.pdf
-  ogUrl: "[PLACEHOLDER: your deployed URL]",
-  availableFrom: "[PLACEHOLDER: e.g. June 2027]",
-  formspreeId: "[PLACEHOLDER-FORMSPREE-ID]", // sign up at formspree.io
+  cvFile: "/assets/cv/dhouha-ben-rhouma-cv.pdf", // Put your CV in public/assets/cv/ and set filename here
+  ogUrl: "[PLACEHOLDER: your deployed Vercel URL]",
+  availableFrom: "[Februrary 2027]",
+  formspreeId: "[PLACEHOLDER-FORMSPREE-ID]", // sign up at formspree.io for free email notifications
 };
 
 export const projects = [
@@ -31,24 +31,26 @@ export const projects = [
       { label: "Research", type: "biz" },
     ],
     badge: "In development",
-    image: null, // set to "assets/images/proj-llm.png" when ready
+    image: null, // e.g. "/assets/images/proj-llm.png"
     imageAlt: "Screenshot of the LLM project interface",
-    link: null, // set to repo URL when ready
+    link: "https://github.com/dhouha-ben-rhouma", // Paste your GitHub or Google Drive link here
+    linkLabel: "View on GitHub →", // or "View on Drive →"
   },
   {
     id: "hackathon",
-    problem: "Agricultural landowners struggle to find seasonal workers for tree harvesting.",
-    title: "Uber-Ceuillet — Hackathon Project",
+    problem: "Individuals who are deaf or hard of hearing face problems in their daily communication, primarily because the population does not understand sign language.",
+    title: "SingUp — Hackathon Project",
     description:
-      "A platform that connects field owners who need help with seasonal tree harvesting to available workers — giving both sides a reliable, transparent match. Conceived, designed, and prototyped during a hackathon. My role: [PLACEHOLDER — your role in the team].",
+      "A a platform created to remove communication barriers in Tunisia by giving users a simple way to understand and express sign language in everyday conversations. My role: Design (logo-Figma).",
     tags: [
       { label: "Business model", type: "biz" },
       { label: "Figma", type: "design" },
       { label: "Hackathon", type: "biz" },
     ],
-    image: null, // "assets/images/proj-hackathon.png"
-    imageAlt: "Uber-Ceuillet app screens",
-    link: null, // Figma or pitch link
+    image: "/assets/images/proj-hackathon.png" ,
+    imageAlt: "SignUp app logo",
+    link: "https://www.figma.com/proto/6LjR3bNrTs8smbwHJE4GK3/SingUp?node-id=1-4&p=f&t=9wOZCyWGDgI4rzFK-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A4" , 
+    linkLabel: "View Prototype →",
   },
   {
     id: "website",
@@ -58,28 +60,62 @@ export const projects = [
       "[PLACEHOLDER — 2–3 sentences describing the website, what it does, and your role.] University assignment. My role: full-stack development.",
     tags: [
       { label: "HTML / CSS / JS", type: "dev" },
-      { label: "Node", type: "dev" },
-      { label: "React", type: "dev" },
+      { label: "canva", type: "biz" },
+      { label: "Bootstrap", type: "dev" },
     ],
-    image: null, // "assets/images/proj-website.png"
+    image: null, // "/assets/images/proj-website.png"
     imageAlt: "Screenshot of the university website project",
-    link: null,
+    link: "https://github.com/dhouha-ben-rhouma/UberCeuillette", 
+    linkLabel: "View Project →",
   },
+];
+
+export const certificates = [
+  {
+    id: "cert-llm-python",
+    title: "Introduction to LLM in Python",
+    issuer: "DataCamp", // or Coursera, University, etc.
+    date: "2026",
+    link: "/certificates/introduction to LLM in python.pdf", // Can also be a Google Drive or verification link
+    linkLabel: "View Certificate (PDF) →",
+    skills: ["Python", "Large Language Models", "AI Fundamentals"],
+  },
+  {
+    id: "cert-digital-markting",
+    title: "Digital Marketing",
+    issuer: "WEE learn", // or Coursera, University, etc.
+    date: "2022",
+    link: "/certificates/Dhouha-Ben-Rhouma - Digital Marketing - Wee Learn - 2022.png", // Can also be a Google Drive or verification link
+    linkLabel: "View Certificate (PNG) →",
+    skills: ["Digital Marketing", "Social media managment", "Design"],
+  },
+  // You can easily add more certificates below following this format:
+  /*
+  {
+    id: "cert-example",
+    title: "Certificate Name",
+    issuer: "Issuer / Platform",
+    date: "2026",
+    link: "https://drive.google.com/...", // Google Drive or website URL
+    linkLabel: "View on Drive →",
+    skills: ["Skill 1", "Skill 2"],
+  },
+  */
 ];
 
 export const experience = [
   {
     id: "joossoor",
-    role: "Full Stuck Development Intern",
+    role: "Web Development Intern",
     org: "Joossoor Holding Group",
     date: "2026 · 5 weeks",
     type: "Internship",
     description:
       "Built and maintained web pages during a 5-week internship, applying front-end skills in a real business environment. Learned to work within a company's digital workflow and communicate deliverables to non-technical stakeholders.",
     tags: [
-      { label: "HTML / CSS / JS", type: "dev" },
-      { label: "WordPress", type: "dev" },
-      { label: "Client communication", type: "biz" },
+      { label: " React js / Node js", type: "dev" },
+      { label: "Express js  / Tailwind", type: "dev" },
+      { label: "Collaboration", type: "biz" },
     ],
   },
   {
@@ -105,9 +141,12 @@ export const experience = [
     description:
       "Member of two student clubs: ISG Digital (digital projects and events) and SecuriNets (cybersecurity awareness). Participated in club activities, workshops, and events.",
     tags: [
+      { label: "Team work", type: "biz" },
       { label: "Events", type: "biz" },
+      { label: "Video Editing", type: "biz" },
+      { label: "Design", type: "biz" },
       { label: "Digital", type: "dev" },
-      { label: "Cybersecurity awareness", type: "dev" },
+      { label: "Cybersecurity ", type: "dev" },
     ],
   },
 ];
@@ -115,31 +154,31 @@ export const experience = [
 export const events = [
   {
     id: "e1",
-    year: "[PLACEHOLDER: Year]",
-    title: "[PLACEHOLDER: Hackathon or event name]",
+    year: "2026",
+    title: "IEEExtreme",
     description: "[PLACEHOLDER: 1–2 sentences — what you built, your role, outcome or lesson learned.]",
-    tags: [{ label: "Hackathon", type: "biz" }, { label: "[PLACEHOLDER: tech used]", type: "dev" }],
+    tags: [{ label: "Hackathon", type: "biz" }, { label: "Problem Solving", type: "dev" }],
   },
   {
     id: "e2",
-    year: "[PLACEHOLDER: Year]",
-    title: "[PLACEHOLDER: Hackathon or event name]",
+    year: "2026",
+    title: "CyberHorizen 2.0",
     description: "[PLACEHOLDER: 1–2 sentences — what you built, your role, outcome or lesson learned.]",
-    tags: [{ label: "Hackathon", type: "biz" }],
+    tags: [{ label: "Workshops", type: "dev" }, { label: "CTF", type: "dev" }],
   },
   {
     id: "e3",
-    year: "[PLACEHOLDER: Year]",
-    title: "[PLACEHOLDER: Event name — conference, workshop, etc.]",
+    year: "2025",
+    title: "Bardo to Business 2.0",
     description: "[PLACEHOLDER: 1–2 sentences about what this event was and what you took away.]",
-    tags: [{ label: "Event", type: "biz" }],
+    tags: [{ label: "Hackathon", type: "biz" }, { label: "Public Speaking", type: "biz" }, { label: "Workshops", type: "biz" }],
   },
   {
     id: "e4",
-    year: "[PLACEHOLDER: Year]",
-    title: "[PLACEHOLDER: Hackathon or event name]",
+    year: "2025",
+    title: "Youth Speak Hackathon ",
     description: "[PLACEHOLDER: Fill in.]",
-    tags: [{ label: "Hackathon", type: "biz" }],
+    tags: [{ label: "Hackathon", type: "biz" }, { label: "Public Speaking", type: "biz" }, { label: "Innovation", type: "biz" }],
   },
 ];
 
@@ -152,7 +191,7 @@ export const skillGroups = [
   {
     label: "Business & Systems",
     color: "biz",
-    pills: ["Business Analysis", "ERP (interest)", "Process Mapping", "Digital Transformation", "Project Support", "Requirements Gathering"],
+    pills: ["Business Analysis", "ERP (interest)", "Process Mapping", "Digital Transformation", "Project Support", "Requirements Gathering", "Social Media"],
   },
   {
     label: "Design & Creative",
@@ -190,8 +229,8 @@ export const howSteps = [
 ];
 
 export const galleryItems = [
-  { id: "g1", src: "assets/images/creative/[PLACEHOLDER-image-1].jpg", alt: "Social media post design", large: true },
-  { id: "g2", src: "assets/images/creative/[PLACEHOLDER-image-2].jpg", alt: "Brand graphic example" },
+  { id: "g1", src: "assets/images/creative/poster event 'TikTalks'.png", alt: "Social media post design", large: true },
+  { id: "g2", src: "assets/images/creative/IEEE logo.png", alt: "IEEE logo" },
   { id: "g3", src: "assets/images/creative/[PLACEHOLDER-image-3].jpg", alt: "Short-form video thumbnail" },
   { id: "g4", src: "assets/images/creative/[PLACEHOLDER-image-4].jpg", alt: "Canva design example" },
   { id: "g5", src: "assets/images/creative/[PLACEHOLDER-image-5].jpg", alt: "Creative work sample" },

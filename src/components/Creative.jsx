@@ -24,31 +24,45 @@ export default function Creative() {
 
         {/* Gallery Grid */}
         <div className="gallery-grid" data-reveal aria-label="Portfolio gallery">
-          {galleryItems.map((item, idx) => (
-            <div
-              key={item.id}
-              role="button"
-              tabIndex={0}
-              aria-label={`Open gallery sample ${idx + 1}`}
-              onClick={() => setActiveImage(item)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  setActiveImage(item);
-                }
-              }}
-              className={`gallery-item ${item.large ? 'large' : ''}`}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)', fontSize: '.7rem', textTransform: 'uppercase', letterSpacing: '.08em', textAlign: 'center', padding: '1rem' }}>
-                [{item.alt}]
+          {galleryItems.map((item, idx) => {
+            const hasRealImage = item.src && !item.src.includes('PLACEHOLDER');
+            const imgSrc = hasRealImage ? (item.src.startsWith('/') ? item.src : `/${item.src}`) : null;
+
+            return (
+              <div
+                key={item.id}
+                role="button"
+                tabIndex={0}
+                aria-label={`Open gallery sample ${idx + 1}: ${item.alt}`}
+                onClick={() => setActiveImage({ ...item, resolvedSrc: imgSrc })}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setActiveImage({ ...item, resolvedSrc: imgSrc });
+                  }
+                }}
+                className={`gallery-item ${item.large ? 'large' : ''}`}
+              >
+                {imgSrc ? (
+                  <img
+                    src={imgSrc}
+                    alt={item.alt}
+                    loading="lazy"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                ) : (
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)', fontSize: '.7rem', textTransform: 'uppercase', letterSpacing: '.08em', textAlign: 'center', padding: '1rem' }}>
+                    [{item.alt}]
+                  </div>
+                )}
+                <div className="gallery-overlay" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                  </svg>
+                </div>
               </div>
-              <div className="gallery-overlay" aria-hidden="true">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
-                </svg>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Service cards */}
@@ -97,8 +111,9 @@ export default function Creative() {
           </button>
           <div
             style={{
-              maxWidth: 'min(85vw, 600px)',
-              padding: '2.5rem',
+              maxWidth: 'min(90vw, 800px)',
+              maxHeight: '85vh',
+              padding: '1.5rem',
               borderRadius: '20px',
               background: 'var(--panel)',
               border: '1px solid var(--border)',
@@ -107,15 +122,25 @@ export default function Creative() {
               alignItems: 'center',
               gap: '1rem',
               textAlign: 'center',
+              overflow: 'hidden',
             }}
             onClick={(e) => e.stopPropagation()}
           >
+            {activeImage.resolvedSrc ? (
+              <img
+                src={activeImage.resolvedSrc}
+                alt={activeImage.alt}
+                style={{
+                  maxWidth: '100%',
+                  maxHeight: '65vh',
+                  objectFit: 'contain',
+                  borderRadius: '12px',
+                }}
+              />
+            ) : null}
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: '.85rem', color: 'var(--gold)', textTransform: 'uppercase', letterSpacing: '.08em' }}>
               {activeImage.alt}
             </span>
-            <p style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-mono)', fontSize: '.75rem' }}>
-              Image source: {activeImage.src}
-            </p>
           </div>
         </div>
       )}

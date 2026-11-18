@@ -9,7 +9,16 @@ export default function About() {
           {/* Left: portrait + quote */}
           <div data-reveal>
             <div className="about-portrait img-placeholder">
-              <span>Portrait</span>
+              <img
+                src="/assets/images/portrait.jpg"
+                alt="Dhouha Ben Rhouma"
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.nextElementSibling.style.display = 'block';
+                }}
+              />
+              <span style={{ display: 'none' }}>Portrait</span>
             </div>
             <blockquote className="pull-quote">
               "I'm not a pure developer and I don't want to be boxed in as one. I'm most useful when business and tech need to talk to each other."
